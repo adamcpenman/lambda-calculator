@@ -11,12 +11,17 @@ import { numbers } from "../../../data";
  const Numbers = (props) => {
   // STEP 2 - add the imported data to state
   const [buttonNumbers, setButtonNumber] = useState(numbers);
+  console.log("numbers", props);
   return (
     <div>
-      {buttonNumbers.map(number => <NumberButton key={number} text={number} />)}
-    </div>
+      {buttonNumbers.map(number => {
+                     return <NumberButton key={number} 
+                                          text={number} 
+                                          addNumber={props.addNumber}/>;
+  })}
+ </div>
   );
-};
+ }
 
 export default Numbers
 
